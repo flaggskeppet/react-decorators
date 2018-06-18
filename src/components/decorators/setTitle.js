@@ -25,7 +25,6 @@ const setTitle = (getTitle) => (WrappedComponent) => {
         }
 
         render() {
-            console.log(this.props)
             return <WrappedComponent {...this.props} />
         }
     }

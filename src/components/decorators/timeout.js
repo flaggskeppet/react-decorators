@@ -11,8 +11,6 @@
 
     The descriptor:
     The Property Descriptor for the method.
-
-    Note: Does not work though...
     
 */
 export default function timeout(milliseconds = 0) {

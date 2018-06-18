@@ -4,11 +4,11 @@
 
     Used without parenthesises, like this: @logRender
 */
-export default function logRender(component) {
-    const original = component.prototype.render;
+export default function logRender(WrappedComponent) {
+    const original = WrappedComponent.prototype.render;
 
-    component.prototype.render = function () {
-        console.log(`Rendering ${component.name}...`);
+    WrappedComponent.prototype.render = function () {
+        console.log(`Rendering ${WrappedComponent.name}...`);
         return original.apply(this, arguments);
     };
 }

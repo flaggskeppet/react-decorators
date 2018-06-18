@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 var axios = require('axios');
 
-const fetchResources = (mapResourcesToProps) => (ComposedComponent) => {
+const fetchResources = (mapResourcesToProps) => (WrappedComponent) => {
     return class extends React.Component {
-        static displayName = `Fetch(${ComposedComponent.displayName || ComposedComponent.name})`
+        static displayName = `Fetch(${WrappedComponent.displayName || WrappedComponent.name})`
         state = {}
 
         componentDidMount() {
@@ -24,7 +24,7 @@ const fetchResources = (mapResourcesToProps) => (ComposedComponent) => {
                 return null;
             }
 
-            return <ComposedComponent {...this.props} {...this.state} />
+            return <WrappedComponent {...this.props} {...this.state} />
         }
     }
 }
